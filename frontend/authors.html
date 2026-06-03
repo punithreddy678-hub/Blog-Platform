@@ -1,1 +1,184 @@
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors - BlogSphere AI</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #020617;
+        }
+
+        .gradient-btn {
+            background: linear-gradient(to right, #9333ea, #a855f7);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #a855f7, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+    </style>
+</head>
+
+<body class="text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <div class="flex items-center gap-2">
+                <span class="text-purple-500 text-2xl">✒</span>
+                <h1 class="text-2xl font-bold">BlogSphere AI</h1>
+            </div>
+
+            <div class="hidden md:flex gap-10 font-medium">
+                <a href="index.html" class="hover:text-purple-400">Home</a>
+                <a href="blogs.html" class="hover:text-purple-400">Blogs</a>
+                <a href="categories.html" class="hover:text-purple-400">Categories</a>
+                <a href="authors.html" class="text-purple-400">Authors</a>
+                <a href="contact.html" class="hover:text-purple-400">Contact</a>
+            </div>
+
+            <div class="flex gap-4">
+                <button class="px-6 py-2 border border-purple-500 rounded-xl hover:bg-purple-500">
+                    Login
+                </button>
+
+                <button class="gradient-btn px-6 py-2 rounded-xl font-semibold">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+
+            <span class="bg-purple-900 text-purple-300 px-6 py-2 rounded-full">
+                Meet Our Writers
+            </span>
+
+            <h1 class="text-5xl md:text-6xl font-extrabold mt-8">
+                Discover Amazing
+                <span class="gradient-text">Authors</span>
+            </h1>
+
+            <p class="text-slate-400 text-lg mt-6 max-w-2xl mx-auto">
+                Connect with talented writers, AI enthusiasts, developers,
+                and creators sharing knowledge across various topics.
+            </p>
+        </div>
+    </section>
+
+    <!-- Authors Grid -->
+    <section class="pb-20 px-6">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Author 1 -->
+                <div class="card rounded-3xl p-6 text-center">
+                    <img
+                        src="https://i.pravatar.cc/200?img=1"
+                        class="w-24 h-24 rounded-full mx-auto mb-4"
+                        alt=""
+                    >
+
+                    <h3 class="text-xl font-bold">Sarah Johnson</h3>
+                    <p class="text-purple-400 mt-1">AI Researcher</p>
+
+                    <p class="text-slate-400 text-sm mt-4">
+                        Writes about AI, Machine Learning, and future
+                        technologies.
+                    </p>
+
+                    <div class="mt-4 text-sm text-slate-500">
+                        45 Articles
+                    </div>
+                </div>
+
+                <!-- Author 2 -->
+                <div class="card rounded-3xl p-6 text-center">
+                    <img
+                        src="https://i.pravatar.cc/200?img=5"
+                        class="w-24 h-24 rounded-full mx-auto mb-4"
+                        alt=""
+                    >
+
+                    <h3 class="text-xl font-bold">Michael Chen</h3>
+                    <p class="text-purple-400 mt-1">Full Stack Developer</p>
+
+                    <p class="text-slate-400 text-sm mt-4">
+                        Shares tutorials on web development and software
+                        engineering.
+                    </p>
+
+                    <div class="mt-4 text-sm text-slate-500">
+                        62 Articles
+                    </div>
+                </div>
+
+                <!-- Author 3 -->
+                <div class="card rounded-3xl p-6 text-center">
+                    <img
+                        src="https://i.pravatar.cc/200?img=8"
+                        class="w-24 h-24 rounded-full mx-auto mb-4"
+                        alt=""
+                    >
+
+                    <h3 class="text-xl font-bold">Emma Wilson</h3>
+                    <p class="text-purple-400 mt-1">Content Strategist</p>
+
+                    <p class="text-slate-400 text-sm mt-4">
+                        Covers blogging, SEO, digital marketing and growth.
+                    </p>
+
+                    <div class="mt-4 text-sm text-slate-500">
+                        38 Articles
+                    </div>
+                </div>
+
+                <!-- Author 4 -->
+                <div class="card rounded-3xl p-6 text-center">
+                    <img
+                        src="https://i.pravatar.cc/200?img=12"
+                        class="w-24 h-24 rounded-full mx-auto mb-4"
+                        alt=""
+                    >
+
+                    <h3 class="text-xl font-bold">David Brown</h3>
+                    <p class="text-purple-400 mt-1">Tech Writer</p>
+
+                    <p class="text-slate-400 text-sm mt-4">
+                        Reviews technology products and emerging trends.
+                    </p>
+
+                    <div class="mt-4 text-sm text-slate-500">
+                        51 Articles
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-8 text-center text-slate-500">
+        © 2026 BlogSphere AI. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
