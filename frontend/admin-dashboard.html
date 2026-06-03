@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard - BlogSphere AI</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Inter',sans-serif;
+}
+</style>
+
+</head>
+
+<body class="bg-slate-950 text-white">
+
+<div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+
+    <aside class="w-72 bg-slate-900 border-r border-slate-800 p-6">
+
+        <h1 class="text-2xl font-bold text-purple-400 mb-10">
+            Admin Panel
+        </h1>
+
+        <nav class="space-y-4">
+
+            <a href="#" class="block bg-purple-600 p-3 rounded-xl">
+                Dashboard
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Manage Users
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Manage Posts
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Manage Comments
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Categories
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Analytics
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="flex-1 p-8">
+
+        <h2 class="text-4xl font-bold mb-8">
+            Admin Dashboard
+        </h2>
+
+        <!-- Stats -->
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-slate-900 p-6 rounded-3xl">
+                <h3 class="text-gray-400">Total Users</h3>
+                <p class="text-4xl font-bold mt-3">2,547</p>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-3xl">
+                <h3 class="text-gray-400">Total Posts</h3>
+                <p class="text-4xl font-bold mt-3">1,284</p>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-3xl">
+                <h3 class="text-gray-400">Comments</h3>
+                <p class="text-4xl font-bold mt-3">8,932</p>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-3xl">
+                <h3 class="text-gray-400">Categories</h3>
+                <p class="text-4xl font-bold mt-3">24</p>
+            </div>
+
+        </div>
+
+        <!-- Analytics -->
+
+        <div class="bg-slate-900 p-8 rounded-3xl mt-10">
+
+            <h3 class="text-2xl font-bold mb-6">
+                Platform Growth
+            </h3>
+
+            <canvas id="growthChart"></canvas>
+
+        </div>
+
+        <!-- Users Table -->
+
+        <div class="bg-slate-900 rounded-3xl p-8 mt-10">
+
+            <h3 class="text-2xl font-bold mb-6">
+                Recent Users
+            </h3>
+
+            <div class="overflow-x-auto">
+
+                <table class="w-full">
+
+                    <thead>
+
+                    <tr class="border-b border-slate-800">
+
+                        <th class="text-left p-4">Name</th>
+                        <th class="text-left p-4">Email</th>
+                        <th class="text-left p-4">Role</th>
+                        <th class="text-left p-4">Action</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    <tr class="border-b border-slate-800">
+
+                        <td class="p-4">John Smith</td>
+                        <td class="p-4">john@example.com</td>
+                        <td class="p-4">Author</td>
+                        <td class="p-4">
+                            <button class="bg-red-600 px-4 py-2 rounded-lg">
+                                Delete
+                            </button>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="p-4">Sarah Lee</td>
+                        <td class="p-4">sarah@example.com</td>
+                        <td class="p-4">User</td>
+                        <td class="p-4">
+                            <button class="bg-red-600 px-4 py-2 rounded-lg">
+                                Delete
+                            </button>
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- Posts Table -->
+
+        <div class="bg-slate-900 rounded-3xl p-8 mt-10">
+
+            <h3 class="text-2xl font-bold mb-6">
+                Recent Posts
+            </h3>
+
+            <div class="space-y-4">
+
+                <div class="flex justify-between border-b border-slate-800 pb-4">
+
+                    <span>Future of AI</span>
+
+                    <button class="bg-red-600 px-4 py-2 rounded-lg">
+                        Remove
+                    </button>
+
+                </div>
+
+                <div class="flex justify-between border-b border-slate-800 pb-4">
+
+                    <span>JavaScript Trends 2026</span>
+
+                    <button class="bg-red-600 px-4 py-2 rounded-lg">
+                        Remove
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+const ctx = document.getElementById('growthChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [{
+            label: 'Users',
+            data: [120,250,340,500,700,950]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

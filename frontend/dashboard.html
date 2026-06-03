@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard - BlogSphere AI</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Inter',sans-serif;
+}
+</style>
+
+</head>
+
+<body class="bg-slate-950 text-white">
+
+<div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-72 bg-slate-900 border-r border-slate-800 p-6">
+
+        <h1 class="text-2xl font-bold text-purple-400 mb-10">
+            BlogSphere AI
+        </h1>
+
+        <nav class="space-y-4">
+
+            <a href="#" class="block bg-purple-600 p-3 rounded-xl">
+                Dashboard
+            </a>
+
+            <a href="create-post.html" class="block p-3 rounded-xl hover:bg-slate-800">
+                Create Post
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                My Posts
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Draft Posts
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Bookmarks
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Reading History
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Notifications
+            </a>
+
+            <a href="#" class="block p-3 rounded-xl hover:bg-slate-800">
+                Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8">
+
+        <!-- Welcome -->
+        <div class="mb-8">
+
+            <h2 class="text-4xl font-bold">
+                Welcome Back 👋
+            </h2>
+
+            <p class="text-gray-400 mt-2">
+                Manage your content and track performance.
+            </p>
+
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="bg-slate-900 p-6 rounded-3xl">
+                <h3 class="text-gray-400">Total Posts</h3>
+                <p class="text-4xl font-bold mt-3">24</p>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-3xl">
+                <h3 class="text-gray-400">Drafts</h3>
+                <p class="text-4xl font-bold mt-3">8</p>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-3xl">
+                <h3 class="text-gray-400">Followers</h3>
+                <p class="text-4xl font-bold mt-3">1,284</p>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-3xl">
+                <h3 class="text-gray-400">Bookmarks</h3>
+                <p class="text-4xl font-bold mt-3">95</p>
+            </div>
+
+        </div>
+
+        <!-- Analytics -->
+        <div class="bg-slate-900 p-8 rounded-3xl mt-10">
+
+            <h3 class="text-2xl font-bold mb-6">
+                Monthly Views
+            </h3>
+
+            <canvas id="viewsChart"></canvas>
+
+        </div>
+
+        <!-- Recent Posts -->
+        <div class="bg-slate-900 p-8 rounded-3xl mt-10">
+
+            <h3 class="text-2xl font-bold mb-6">
+                Recent Posts
+            </h3>
+
+            <div class="space-y-4">
+
+                <div class="flex justify-between border-b border-slate-800 pb-4">
+                    <span>Future of AI</span>
+                    <span class="text-green-400">Published</span>
+                </div>
+
+                <div class="flex justify-between border-b border-slate-800 pb-4">
+                    <span>JavaScript Trends</span>
+                    <span class="text-yellow-400">Draft</span>
+                </div>
+
+                <div class="flex justify-between border-b border-slate-800 pb-4">
+                    <span>Startup Growth Guide</span>
+                    <span class="text-green-400">Published</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+const ctx = document.getElementById('viewsChart');
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [
+            'Jan','Feb','Mar','Apr','May','Jun'
+        ],
+        datasets: [{
+            label: 'Views',
+            data: [
+                1200,1900,3000,2500,4200,5100
+            ]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

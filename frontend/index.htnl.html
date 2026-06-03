@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSphere AI - Modern Blogging Platform</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass {
+            backdrop-filter: blur(15px);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right,#7C3AED,#C084FC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-white">
+    <nav class="fixed top-0 left-0 w-full z-50 glass">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <div class="flex items-center gap-2">
+            <i class="fa-solid fa-pen-nib text-purple-400 text-2xl"></i>
+            <span class="text-2xl font-bold">
+                BlogSphere AI
+            </span>
+        </div>
+
+        <ul class="hidden md:flex gap-8 text-sm font-medium">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Authors</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+
+            <button id="themeToggle">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <a href="login.html"
+               class="px-4 py-2 rounded-lg border border-purple-500">
+                Login
+            </a>
+
+            <a href="register.html"
+               class="px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-700">
+                Get Started
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+    <!-- Navbar Here -->
+     <section class="min-h-screen flex items-center justify-center px-6">
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+
+        <div>
+
+            <span class="bg-purple-700/30 text-purple-300 px-4 py-2 rounded-full">
+                AI Powered Blogging Platform
+            </span>
+
+            <h1 class="text-6xl font-extrabold mt-8 leading-tight">
+
+                Write Smarter With
+
+                <span class="gradient-text">
+                    AI Assistance
+                </span>
+
+            </h1>
+
+            <p class="text-gray-400 mt-6 text-lg">
+                Create, publish and grow your audience with
+                modern AI-enhanced blogging tools.
+            </p>
+
+            <div class="flex gap-4 mt-8">
+
+                <a href="register.html"
+                   class="bg-purple-600 px-8 py-4 rounded-xl font-semibold">
+                    Start Writing
+                </a>
+
+                <a href="blogs.html"
+                   class="border border-purple-500 px-8 py-4 rounded-xl">
+                    Explore Blogs
+                </a>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class="glass rounded-3xl p-8">
+
+                <h3 class="text-xl font-bold mb-6">
+                    AI Writing Assistant
+                </h3>
+
+                <textarea
+                    class="w-full h-40 bg-slate-900 rounded-xl p-4"
+                    placeholder="Write your next blog idea..."></textarea>
+
+                <button
+                    class="w-full mt-4 bg-purple-600 py-3 rounded-xl">
+                    Generate Content
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- Hero Section Here -->
+
+    <!-- Trending Posts Here -->
+
+    <!-- Categories Here -->
+
+    <!-- AI Assistant Section Here -->
+
+    <!-- Featured Authors Here -->
+
+    <!-- Newsletter Here -->
+
+    <!-- Footer Here -->
+
+</body>
+</html>
