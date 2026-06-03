@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,12 +37,14 @@ body{
             type="text"
             id="name"
             placeholder="Full Name"
+            required
             class="w-full p-3 rounded-xl bg-slate-800 border border-slate-700">
 
         <input
             type="email"
             id="email"
             placeholder="Email Address"
+            required
             class="w-full p-3 rounded-xl bg-slate-800 border border-slate-700">
 
         <select
@@ -57,12 +60,14 @@ body{
             type="password"
             id="password"
             placeholder="Password"
+            required
             class="w-full p-3 rounded-xl bg-slate-800 border border-slate-700">
 
         <input
             type="password"
             id="confirmPassword"
             placeholder="Confirm Password"
+            required
             class="w-full p-3 rounded-xl bg-slate-800 border border-slate-700">
 
         <button
@@ -78,13 +83,92 @@ body{
     <div class="mt-6 text-center">
 
         <a href="login.html"
-           class="text-purple-400">
-            Already have an account?
+           class="text-purple-400 hover:text-purple-300">
+            Already have an account? Login
         </a>
 
     </div>
 
 </div>
+
+<script>
+
+document.getElementById("registerForm")
+.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const role =
+        document.getElementById("role").value;
+
+    const password =
+        document.getElementById("password").value;
+
+    const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+    if(password !== confirmPassword){
+
+        alert("Passwords do not match");
+        return;
+
+    }
+
+    try {
+
+        const response = await fetch(
+            "https://blog-platform-hxpc.onrender.com/api/auth/register",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                    role
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if(response.ok){
+
+            alert("Registration Successful!");
+
+            localStorage.setItem(
+                "user",
+                JSON.stringify(data)
+            );
+
+            window.location.href =
+                "login.html";
+
+        } else {
+
+            alert(data.message || "Registration failed");
+
+        }
+
+    } catch(error){
+
+        console.error(error);
+
+        alert("Server Error. Please try again.");
+
+    }
+
+});
+
+</script>
 
 </body>
 </html>
