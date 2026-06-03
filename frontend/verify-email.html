@@ -61,4 +61,50 @@
 </div>
 
 </body>
+<script>
+
+const API_URL = "https://blog-platform-hxpc.onrender.com";
+
+async function sendVerificationEmail() {
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user || !user.email) {
+        alert("Please login first");
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            `${API_URL}/api/auth/send-verification`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: user.email
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Verification email sent successfully!");
+        } else {
+            alert(data.message || "Failed to send email");
+        }
+
+    } catch (error) {
+
+        console.error(error);
+        alert("Server Error");
+
+    }
+
+}
+
+</script>
 </html>
