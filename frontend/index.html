@@ -590,114 +590,34 @@
 </footer>
 </body>
 <script>
+const toggleBtn = document.getElementById('themeToggle');
 
-// Theme Toggle
+toggleBtn.addEventListener('click', () => {
 
-const toggleBtn = document.getElementById("themeToggle");
+    document.body.classList.toggle('bg-white');
+    document.body.classList.toggle('text-black');
 
-toggleBtn.addEventListener("click", () => {
-
-    document.body.classList.toggle("bg-white");
-    document.body.classList.toggle("text-black");
-
-    document.body.classList.toggle("bg-slate-950");
-    document.body.classList.toggle("text-white");
+    document.body.classList.toggle('bg-slate-950');
+    document.body.classList.toggle('text-white');
 
 });
 
-// User Login Check
-
-const user = JSON.parse(localStorage.getItem("user"));
-
-if (user) {
-
-    const loginBtn =
-        document.querySelector('a[href="login.html"]');
-
-    const registerBtn =
-        document.querySelector('a[href="register.html"]');
-
-    if (loginBtn) loginBtn.style.display = "none";
-    if (registerBtn) registerBtn.style.display = "none";
-
-    document.getElementById("userSection").innerHTML = `
-        <div class="flex items-center gap-4 mt-8">
-            <span class="text-purple-400 font-semibold">
-                Welcome, ${user.name || "User"}
-            </span>
-
-            <a href="dashboard.html"
-               class="bg-purple-600 px-4 py-2 rounded-lg">
-               Dashboard
-            </a>
-
-            <button
-                onclick="logout()"
-                class="bg-red-600 px-4 py-2 rounded-lg">
-                Logout
-            </button>
-        </div>
-    `;
-
-}
-
-// Logout
-
-function logout() {
-
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-
-    window.location.href = "login.html";
-
-}
-
-// Simple Fade-In Animation
-
-window.addEventListener("load", () => {
-
-    const sections =
-        document.querySelectorAll("section");
-
-    sections.forEach((section, index) => {
-
-        section.style.opacity = "0";
-        section.style.transform = "translateY(30px)";
-        section.style.transition = "all 0.8s ease";
-
-        setTimeout(() => {
-
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
-
-        }, index * 200);
-
-    });
-
-});
-
-// AI Assistant Demo
-
-document.querySelectorAll("button")
-.forEach(btn => {
-
-    if (
-        btn.innerText.includes("Generate Content")
-    ) {
-
-        btn.addEventListener("click", () => {
-
-            alert(
-                "AI Assistant Coming Soon. Connect Gemini API here."
-            );
-
-        });
-
+</script>
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
     }
 
-});
+    .glass {
+        backdrop-filter: blur(15px);
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
 
-</script>
-
-</script>
+    .gradient-text {
+        background: linear-gradient(to right,#7C3AED,#C084FC);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
 </html>
