@@ -26,7 +26,12 @@ app.use("/api/upload", uploadRoutes);
 app.use("/api/admin", adminRoutes);
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        "https://blog-platform-nu-dusky.vercel.app"
+    ],
+    credentials: true
+}));
 app.use(helmet());
 app.use(cookieParser());
 
