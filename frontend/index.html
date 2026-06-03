@@ -601,5 +601,21 @@ toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('text-white');
 
 });
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (user) {
+    document.getElementById("userSection").innerHTML = `
+        <span>Welcome, ${user.name}</span>
+        <button onclick="logout()">Logout</button>
+    `;
+}
+
+function logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.location.href = "login.html";
+}
+
 </script>
 </html>
